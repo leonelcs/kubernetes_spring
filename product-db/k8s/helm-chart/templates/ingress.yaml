@@ -1,0 +1,27 @@
+# Temporary ingress descriptor, to be able to access the neo4j catalogue db ad-hoc during initial dev stage
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Values.moduleName }}
+  namespace: {{ .Values.namespace }}
+spec:
+  rules:
+  - host: {{ .Values.moduleName }}{{ .Values.ingressSuffix }}.{{ .Values.tcloudDomain }}
+    http:
+      paths:
+      - backend:
+          serviceName: {{ .Values.moduleName }}
+          servicePort: 7474
+        path: /
+  - host: {{ .Values.moduleName }}-bolt{{ .Values.ingressSuffix }}.{{ .Values.tcloudDomain }}
+    http:
+      paths:
+      - backend:
+          serviceName: {{ .Values.moduleName }}
+          servicePort: 7687
+        path: /
+  tls:
+  - hosts:
+    - {{ .Values.moduleName }}{{ .Values.ingressSuffix }}.{{ .Values.tcloudDomain }}
+    - {{ .Values.moduleName }}-bolt{{ .Values.ingressSuffix }}.{{ .Values.tcloudDomain }}
+    secretName: tcloud

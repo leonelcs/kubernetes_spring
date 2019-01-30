@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.moduleName }}
+  namespace: {{ .Values.namespace }}
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: {{ .Values.workloadSelector }}
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: {{ .Values.workloadSelector }}
+    spec:
+      affinity: {}
+      containers:
+      - name: {{ .Values.moduleName }}
+        image: {{ .Values.artifactoryUrl }}/{{ .Values.moduleName }}:{{ .Values.version }}
+        imagePullPolicy: Always
+        env:
+        - name: neo4j_user
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secrets }}
+              key: product-db-user
+        - name: neo4j_password
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secrets }}
+              key: product-db-password
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: true
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+          - mountPath: "/data"
+            name: product-db-volume
+          - mountPath: "/logs"
+            name: product-db-log-volume
+      volumes:
+        - name: product-db-volume
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistentVolumeClaim }}
+        - name: product-db-log-volume
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistentLogVolumeClaim }}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

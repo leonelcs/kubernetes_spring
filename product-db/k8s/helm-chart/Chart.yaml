@@ -1,0 +1,7 @@
+name: product-db
+version: 0.0.1
+description: product-db
+home: https://product-db.main.tcloud.kpn.org
+maintainers:
+  - name: SingleShop Team
+    email: single-shop-api@kpn.com

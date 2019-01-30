@@ -1,0 +1,12 @@
+spring:
+  profiles.active: production
+  data:
+    neo4j:
+      username: ${product-db-user}
+      password: ${product-db-password}
+      uri: bolt://${product-db-host}
+
+#      username: neo4j
+#      password:
+#      uri: bolt://localhost
+#

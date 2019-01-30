@@ -1,0 +1,16 @@
+moduleName: cart-service
+workloadSelector: deployment-cart-service
+
+# The following should be considered default values, and will be overridden by Jenkinsfile
+namespace: singleshop-dev
+environment: dev
+ingressSuffix: -dev
+tcloudDomain: main.tcloud.kpn.org
+secrets: singleshop-secrets
+configMap: singleshop-config
+artifactoryUrl: artifacts.kpn.org/ecommerce
+version: latest
+
+
+
+

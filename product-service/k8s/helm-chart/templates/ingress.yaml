@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Values.moduleName }}
+  namespace: {{ .Values.namespace }}
+spec:
+  rules:
+  - host: singleshop{{ .Values.ingressSuffix }}.{{ .Values.tcloudDomain }}
+    http:
+      paths:
+      - backend:
+          serviceName: {{ .Values.moduleName }}
+          servicePort: 8080
+        path: /product
+  tls:
+  - hosts:
+    - singleshop{{ .Values.ingressSuffix }}.{{ .Values.tcloudDomain }}
+    secretName: tcloud

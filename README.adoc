@@ -1,0 +1,325 @@
+:toc:
+:icons: font
+:source-highlighter: prettify
+:project_id:
+
+This guide shows you how to build all single-shop artifacts.
+
+
+== Project Setup
+
+The project is set up as a multi-module build. This has the following advantages:
+
+- Clear isolation between the modules. The whole goal of the MVP pattern is to make sure your business logic and presentations layer are not tightly coupled together. By defining these in different modules it makes this separation more clear and encourages you to stick to this pattern.
+- Code reuse - consider the case where you have one application that you'd to sell for several customers, but each of these customers would like to get a different look and feel. If you'll have all of your code in one monolithic project you'll have to either have many forks of your project, one for each customer or otherwise bloat the provided app code with the customization options. Now, if on the other hand you had separated your modules, then you could just prepare a different presentation layer for each customer and bundle it with the other common modules.
+- Splitting your project into sub-project allows more efficient build and testing as you can rebuild and test only the modules that changed rather than recompiling the whole project whenever there's a change in one of the files.
+
+=== Submodules
+
+* jenkins-pipeline
+  ** Directory containing a generic Jenkins pipeline script for completely building and deploying one of the modules below to Tcloud.
+* config-map
+  ** This module represents a Kubernetes 'configMap', where various configuration information can be
+  stored that is needed by (multiple) modules. For instance, the 'product-service-port' is needed by
+  the product-service to know what port it should listen on, while it is also needed by the cart-service
+  to know through which port to contact the product-service
+* product-importer
+  ** Module that is used for importing the DigitalEngine data concerning the sim only subscriptions into our persistence layer (graphDB, Neo4j)
+* product-model
+  ** common module containing model classes to interact with the neo4j database.
+* product-service
+  ** Module containing the actual API with endpoints itself.
+* product-db
+  ** Module without any java code, used to deploy to the cloud a container with just a neo4j database that uses a PersistentVolumeClaim for its /data mount.
+  This database is used by the product-importer and product-service modules.
+* cart-db
+  ** Module without any java code, used to deploy to the cloud a container with just a neo4j database that uses a PersistentVolumeClaim for its /data mount.
+  This database is used by the cart-service module to store customer's shopping carts.
+
+
+== What you'll need
+
+- Java JDK 1.8
+- Gradle 4.10.2 or higher
+- Docker
+
+== Build Artifacts
+
+To build all artifacts invoke:
+
+`gradle build` from the root of the project.
+
+To build all artifacts including docker image's invoke from the root of the project:
+
+----
+gradle build buildDocker
+----
+
+== Running the single-shop-api
+
+=== using gradle's spring boot plugin:
+
+As the single-shop-api expects to have access to some environment variables that would normally be
+provided by the Kubernetes cluster, we need to provide these by passing them onto gradle.
+Add the following to your ~/.gradle/gradle.properties file :
+```
+systemProp.neo4j_user=neo4j
+systemProp.neo4j_password={your password}
+systemProp.neo4j_host=localhost
+```
+<<<
+
+Then invoke:
+----
+cd single-shop-api
+gradle bootRun
+----
+
+=== using docker:
+As the single-shop-api expects to have access to some environment variables that would normally be
+provided by the Kubernetes cluster, we need to provide these to the docker container.
+
+Create a file ```neo4j.env``` with the following content:
+```
+neo4j_user=neo4j
+neo4j_password={your password}
+neo4j_host=host.docker.internal
+```
+<<<
+
+Then invoke:
+----
+docker run -p 8080:8080 --env-file neo4j.env com.kpn.ecommerce/single-shop-api:latest
+----
+
+or to do it all in a one-liner:
+
+----
+gradle clean buildDocker && docker run -p 8080:8080 --env-file neo4j.env com.kpn.ecommerce/single-shop-api:latest
+----
+
+
+== Troubleshooting
+
+At the time of writing one of the dependencies of the project is ```org.springframework.cloud:spring-cloud-dependencies:Greenwich.BUILD-SNAPSHOT```
+Since this is a SNAPSHOT dependency it can happen that the repository hosting the artifact snapshot doesn't have the specific version of a transitive dependency anymore.
+
+ Could not find spring-cloud-kubernetes-discovery.jar (org.springframework.cloud:spring-cloud-kubernetes-discovery:1.0.0.BUILD-SNAPSHOT:20181115.071910-809).
+
+Easily fixed by running:
+
+----
+gradle --refresh-dependencies build
+----
+
+== Developer Conventions
+
+=== Package by feature style
+Package-by-feature uses packages to reflect the feature set. It tries to place all items related to a single feature (and only that feature) into a single directory/package. This results in packages with high cohesion and high modularity, and with minimal coupling between packages. Items that work closely together are placed next to each other. They aren't spread out all over the application. It's also interesting to note that, in some cases, deleting a feature can reduce to a single operation - deleting a directory. (Deletion operations might be thought of as a good test for maximum modularity: an item has maximum modularity only if it can be deleted in a single operation.)
+In package-by-feature, the package names correspond to important, high-level aspects of the problem domain. For example, a drug prescription application might have these packages:
+
+----
+com.app.doctor
+com.app.drug
+com.app.patient
+com.app.prescription
+com.app.report
+com.app.security
+com.app.webmaster
+com.app.util
+and so on...
+----
+
+Each package usually contains only the items related to that particular feature, and no other feature. For example, the com.app.doctor package might contain these items:
+
+----
+DoctorAction.java - an action or controller object
+Doctor.java - a Model Object
+DoctorDAO.java - Data Access Object
+database items (SQL statements)
+user interface items (perhaps a JSP, in the case of a web app)
+----
+
+It's important to note that a package can contain not just Java code, but other files as well. Indeed, in order for package-by-feature to really work as desired, all items related to a given feature - from user interface, to Java code, to database items - must be placed in a single directory dedicated to that feature (and only that feature).
+
+In some cases, a feature/package will not be used by any other feature in the application. If that's the case, it may be removed simply by deleting the directory. If it is indeed used by some other feature, then its removal will not be as simple as a single delete operation.
+
+That is, the package-by-feature idea does not imply that one package can never use items belonging to other packages. Rather, package-by-feature *_aggressively prefers package-private as the default scope_*, and only increases the scope of an item to public only when needed.
+
+To summarize, package by feature style has the following advantages:
+
+* Higher Modularity
+* Easier Code Navigation
+* Higher Level of Abstraction
+* Separates Both Features and Layers
+* Minimizes Scope
+* Better Growth Style
+
+=== Helper and Util classes
+
+A Utility class is understood to only have static methods and be stateless.
+Helper classes on the other hand tend to have state or require an instance be created.
+
+When creating Utility classes one can use lombok's `@UtilityClass` however, that annotation is experimental and does seem to have some issues.
+
+As an alternative one can write a utility class like:
+
+----
+final class TestUtilities {
+    private static boolean testWithSpecifiedThrowable;
+
+    private TestUtilities() {
+        throw new UnsupportedOperationException();
+    }
+
+    static <T extends Throwable> void allowTestingWithSpecifiedThrowable(final T e) throws T {
+        if (testWithSpecifiedThrowable) {
+            throw e;
+        }
+    }
+
+    static void setTestWithSpecifiedThrowable() {
+        testWithSpecifiedThrowable = true;
+    }
+
+    static void resetTestWithSpecifiedThrowable() {
+        testWithSpecifiedThrowable = false;
+    }
+}
+----
+
+or:
+
+----
+enum XUtils {;
+    static methods here
+}
+----
+
+=== Constants
+
+Constants in a dedicated file are frowned upon for stylistic reasons. Having a class dedicated to constants can encourage developers to add increasing numbers of unrelated (undocumented?) constants to a file that slowly bloats out of control.
+
+By contrast, having constants associated with the classes they are related to is a more scalable and readable design.
+
+=== Testing
+The `spring-boot-starter-test` dependency (in the test scope) contains the following provided libraries:
+
+* JUnit: The de-facto standard for unit testing Java applications.
+* Spring Test & Spring Boot Test: Utilities and integration test support for Spring Boot applications.
+* AssertJ: A fluent assertion library.
+* Hamcrest: A library of matcher objects (also known as constraints or predicates).
+* Mockito: A Java mocking framework.
+* JSONassert: An assertion library for JSON.
+* JsonPath: XPath for JSON.
+
+Further information: https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html
+
+Should the need arise to:
+
+* Mocking Constructors and Final Methods
+* Mocking Static Methods
+* Partial Mocking
+
+Then `powermock-api-mockito` cabn be added to the project. More info: https://www.baeldung.com/intro-to-powermock
+
+==== Typical UnitTest
+
+----
+package com.kpn.ecommerce.api.repository.neo4j.deserializers;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.mockito.MockitoAnnotations.initMocks;
+
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.kpn.ecommerce.api.repository.neo4j.Repository;
+import java.io.IOException;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
+
+public class RepositoryDeserializerTest {
+
+  private static final String ID = "externalId";
+  private RepositoryDeserializer<Object> objectUnderTest;
+
+  @Mock
+  private Repository<Object> objectRepository;
+  @Mock
+  private JsonParser parser;
+  @Mock
+  private DeserializationContext context;
+
+  @Before
+  public void setUp() {
+    initMocks(this);
+    objectUnderTest = new RepositoryDeserializer<>(Object.class, objectRepository);
+  }
+
+  @Test
+  public void testDeserialize() throws IOException {
+    when(parser.readValueAs(String.class)).thenReturn(ID);
+    final Object expected = new Object();
+    when(objectRepository.findById(ID)).thenReturn(expected);
+
+    assertThat(objectUnderTest.deserialize(parser, context), is(expected));
+    verify(parser).readValueAs(String.class);
+    verify(objectRepository).findById(ID);
+  }
+
+  @Test(expected = IOException.class)
+  public void testDeserializeException() throws IOException {
+    when(parser.readValueAs(String.class)).thenThrow(new IOException("IOException"));
+    objectUnderTest.deserialize(parser, context);
+  }
+}
+----
+
+==== Typical test for Controller class.
+----
+include::product-service/src/test/java/com/kpn/ecommerce/api/business/CompletenessBenefitControllerTest.java[]
+----
+
+==== Testing Collections
+
+When one has to test the contents of a given collection please don't do:
+
+----
+    assertThat(someCollection().get(0).getId(),
+        is(equalTo(expected.getSubscriptions().get(0).getId())));
+    assertThat(someCollection().get(1).getId(),
+        is(equalTo(expected.getSubscriptions().get(1).getId())));
+    assertThat(someCollection().get(1).getData().getAmount(),
+        is(equalTo(expected.getSubscriptions().get(1).getData().getAmount())));
+----
+
+But rather go for:
+
+----
+        assertThat(dto.getSubscriptions(), allOf(
+            hasItem(
+                both(hasProperty(DATA, hasProperty(AMOUNT, is(10))))
+                    .and(hasProperty(ID, is(FIRST_ID)))
+            ),
+            hasItem(
+                both(hasProperty(DATA, hasProperty(AMOUNT, is(20))))
+                    .and(hasProperty(ID, is(SECOND_ID)))
+            )
+        ));
+----
+
+This allows the test to be more expressive.
+
+Breakdown:
+
+* `allOf`: matcher that matches all of the specified matchers
+** `hasItem`: is there an item in the collection which: (first matcher)
+*** `both` `hasProperty` data which in turn `hasProperty` `amount` with a value of `10`
+*** `and` `hasProperty` named `id` which value is equal to `FIRST_ID`
+** `hasItem`: is there an item in the collection which: (second matcher)
+*** `both` `hasProperty` data which in turn `hasProperty` `amount` with a value of `20`
+*** `and` `hasProperty` named `id` which value is equal to `SECOND_ID`

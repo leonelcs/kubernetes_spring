@@ -1,0 +1,8 @@
+rootProject.name = 'single-shop'
+
+include('product-service',
+        'product-model',
+        'product-importer',
+        'cart-service')
+
+

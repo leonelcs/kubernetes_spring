@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.com.kpn.ecommerce.productimporter.MobileCatalogueImportIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-12-03T08:06:06" hostname="mbpvangebruiker.kpnnl.local" time="21.121">
+  <properties/>
+  <testcase name="mobileCatalogueImport" classname="test.com.kpn.ecommerce.productimporter.MobileCatalogueImportIntegrationTest" time="21.121"/>
+  <system-out><![CDATA[.09:06:06.102 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [test.com.kpn.ecommerce.productimporter.MobileCatalogueImportIntegrationTest], using SpringBootContextLoader 
+.09:06:06.103 [Test worker] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [test.com.kpn.ecommerce.productimporter.MobileCatalogueImportIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}. 
+.09:06:06.110 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] 
+.09:06:06.111 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1bed5666, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@602a02e6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@656db8de, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7fc13c03, org.springframework.test.context.support.DirtiesContextTestExecutionListener@eee1bfb, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3ee305f2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3640f1b8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4097e257, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3e58187d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@183256d1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@294ea95e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5634637a] 
+.09:06:06.848 [Test worker] INFO  c.k.e.s.p.i.DatabaseInitializer - Attempting to initialize the database... 
+.09:06:06.848 [Test worker] INFO  c.k.e.s.p.i.DatabaseInitializer - Deleting all the data 
+.09:06:10.441 [Test worker] INFO  c.k.e.s.p.i.DatabaseInitializer - [done] 
+.09:06:10.441 [Test worker] INFO  c.k.e.s.p.i.DatabaseInitializer - Dropping all the indexes and constraints... 
+.09:06:10.642 [Test worker] INFO  c.k.e.s.p.i.DatabaseInitializer - [done] 
+.09:06:10.642 [Test worker] INFO  c.k.e.s.p.MobileCatalogueImporterService - Importing the mobile-catalogue... 
+.09:06:10.642 [Test worker] INFO  c.k.e.s.p.m.i.OptionsImporter - Loading options 
+.09:06:13.620 [Test worker] INFO  c.k.e.s.p.m.i.OptionsImporter - [done] 
+.09:06:13.621 [Test worker] INFO  c.k.e.s.p.m.i.OptionsImporter - Creating index on option name 
+.09:06:13.739 [Test worker] INFO  c.k.e.s.p.m.i.OptionsImporter - [done] 
+.09:06:13.740 [Test worker] INFO  c.k.e.s.p.m.i.OptionsImporter - Creating unique constraint on option id 
+.09:06:14.184 [Test worker] INFO  c.k.e.s.p.m.i.OptionsImporter - [done] 
+.09:06:14.185 [Test worker] INFO  c.k.e.s.p.m.i.OptionsImporter - Creating unique constraint on freeunit id 
+.09:06:14.282 [Test worker] INFO  c.k.e.s.p.m.i.OptionsImporter - [done] 
+.09:06:14.283 [Test worker] INFO  c.k.e.s.p.m.i.OptionsImporter - Creating unique constraint on extension id 
+.09:06:14.355 [Test worker] INFO  c.k.e.s.p.m.i.OptionsImporter - [done] 
+.09:06:14.355 [Test worker] INFO  c.k.e.s.p.m.i.OptionGroupsImporter - Loading options groups 
+.09:06:14.725 [Test worker] INFO  c.k.e.s.p.m.i.OptionGroupsImporter - [done] 
+.09:06:14.725 [Test worker] INFO  c.k.e.s.p.m.i.OptionGroupsImporter - Creating index on options-group name 
+.09:06:14.736 [Test worker] INFO  c.k.e.s.p.m.i.OptionGroupsImporter - [done] 
+.09:06:14.736 [Test worker] INFO  c.k.e.s.p.m.i.OptionGroupsImporter - Creating unique constraint on option-group id 
+.09:06:14.836 [Test worker] INFO  c.k.e.s.p.m.i.OptionGroupsImporter - [done] 
+.09:06:14.837 [Test worker] INFO  c.k.e.s.p.m.i.SubscriptionsImporter - Loading subscriptions 
+.09:06:22.939 [Test worker] INFO  c.k.e.s.p.m.i.SubscriptionsImporter - [done] 
+.09:06:22.939 [Test worker] INFO  c.k.e.s.p.m.i.SubscriptionsImporter - Creating index on subscription name 
+.09:06:22.950 [Test worker] INFO  c.k.e.s.p.m.i.SubscriptionsImporter - [done] 
+.09:06:22.950 [Test worker] INFO  c.k.e.s.p.m.i.SubscriptionsImporter - Creating index on subscription saleEndDate 
+.09:06:22.960 [Test worker] INFO  c.k.e.s.p.m.i.SubscriptionsImporter - [done] 
+.09:06:22.960 [Test worker] INFO  c.k.e.s.p.m.i.SubscriptionsImporter - Creating index on subscription lineup 
+.09:06:22.974 [Test worker] INFO  c.k.e.s.p.m.i.SubscriptionsImporter - [done] 
+.09:06:22.974 [Test worker] INFO  c.k.e.s.p.m.i.SubscriptionsImporter - Creating unique constraint on subscription id 
+.09:06:23.129 [Test worker] INFO  c.k.e.s.p.m.i.SubscriptionsImporter - [done] 
+.09:06:23.130 [Test worker] INFO  c.k.e.s.p.m.i.HardwareImporter - Loading hardwares 
+.09:06:24.592 [Test worker] INFO  c.k.e.s.p.m.i.HardwareImporter - [done] 
+.09:06:24.592 [Test worker] INFO  c.k.e.s.p.m.i.HardwareImporter - Creating index on hardware saleEndDate 
+.09:06:24.607 [Test worker] INFO  c.k.e.s.p.m.i.HardwareImporter - [done] 
+.09:06:24.607 [Test worker] INFO  c.k.e.s.p.m.i.HardwareImporter - Creating unique constraint on hardware id 
+.09:06:24.721 [Test worker] INFO  c.k.e.s.p.m.i.HardwareImporter - [done] 
+.09:06:24.722 [Test worker] INFO  c.k.e.s.p.m.i.PromotionsImporter - Loading promotions 
+.09:06:26.258 [Test worker] INFO  c.k.e.s.p.m.i.PromotionsImporter - [done] 
+.09:06:26.258 [Test worker] INFO  c.k.e.s.p.m.i.PromotionsImporter - Creating index on promotion name 
+.09:06:26.267 [Test worker] INFO  c.k.e.s.p.m.i.PromotionsImporter - [done] 
+.09:06:26.267 [Test worker] INFO  c.k.e.s.p.m.i.PromotionsImporter - Creating index on promotion saleEndDate 
+.09:06:26.276 [Test worker] INFO  c.k.e.s.p.m.i.PromotionsImporter - [done] 
+.09:06:26.276 [Test worker] INFO  c.k.e.s.p.m.i.PromotionsImporter - Creating index on promotion lineup 
+.09:06:26.287 [Test worker] INFO  c.k.e.s.p.m.i.PromotionsImporter - [done] 
+.09:06:26.287 [Test worker] INFO  c.k.e.s.p.m.i.PromotionsImporter - Creating unique constraint on promotion id 
+.09:06:26.457 [Test worker] INFO  c.k.e.s.p.m.i.PromotionsImporter - [done] 
+.09:06:26.458 [Test worker] INFO  c.k.e.s.p.m.i.CountriesImporter - Loading countries 
+.09:06:26.570 [Test worker] INFO  c.k.e.s.p.m.i.CountriesImporter - [done] 
+.09:06:26.570 [Test worker] INFO  c.k.e.s.p.m.i.CountriesImporter - Creating index on country name 
+.09:06:26.577 [Test worker] INFO  c.k.e.s.p.m.i.CountriesImporter - [done] 
+.09:06:26.577 [Test worker] INFO  c.k.e.s.p.m.i.CountriesImporter - Creating unique constraint on country id 
+.09:06:26.666 [Test worker] INFO  c.k.e.s.p.m.i.CountriesImporter - [done] 
+.09:06:26.666 [Test worker] INFO  c.k.e.s.p.m.i.CommercialGroupsImporter - Loading commercial-groups 
+.09:06:26.731 [Test worker] INFO  c.k.e.s.p.m.i.CommercialGroupsImporter - [done] 
+.09:06:26.732 [Test worker] INFO  c.k.e.s.p.m.i.CommercialGroupsImporter - Creating index on commercial-group name 
+.09:06:26.739 [Test worker] INFO  c.k.e.s.p.m.i.CommercialGroupsImporter - [done] 
+.09:06:26.739 [Test worker] INFO  c.k.e.s.p.m.i.CommercialGroupsImporter - Creating unique constraint on commercial-group id 
+.09:06:26.822 [Test worker] INFO  c.k.e.s.p.m.i.CommercialGroupsImporter - [done] 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

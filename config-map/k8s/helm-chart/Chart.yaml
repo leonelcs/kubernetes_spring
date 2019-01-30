@@ -1,0 +1,7 @@
+apiVersion: 1.0
+name: config-map
+version: 0.0.1
+description: Overall Configuration for the singleshop
+maintainers:
+  - name: SingleShop Team
+    email: single-shop-api@kpn.com

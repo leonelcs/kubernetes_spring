@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.configMap }}
+  namespace: {{ .Values.namespace }}
+data:
+  cart-db-host: cart-db
+  product-db-host: product-db
+  product-service-host: product-service
+  product-service-port: "8080"
+

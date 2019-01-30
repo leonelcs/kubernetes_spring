@@ -1,0 +1,22 @@
+#
+# This is a 'generic' Dockerfile for creating a container that is capable of
+# excuting 'helm' and 'rancher' commands.
+#
+# Since it uses a mounted /k8s volume, to be mounted from a module's k8s directory,
+# there is no longer a need to have a separate DockerfileRancher per module.
+#
+
+FROM kpnnv/docker-rancher-helm:0.0.2
+
+##### install bash, curl and trust kpn certificates
+RUN apk add --update -t deps curl \
+ && curl -k -X GET https://artifacts.kpn.org/devsupport-local/scripts/linux_trust_ca_cert_0.1.0.sh | bash -s \
+ && apk del --purge deps && rm /var/cache/apk/*
+
+VOLUME [ "/k8s" ]
+
+WORKDIR /k8s
+
+##### run
+ENTRYPOINT [ "/bin/bash", "-c" ]
+CMD [ "rancher" ]

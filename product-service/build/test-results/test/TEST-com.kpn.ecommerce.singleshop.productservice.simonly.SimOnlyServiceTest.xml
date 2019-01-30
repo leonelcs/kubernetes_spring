@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kpn.ecommerce.singleshop.productservice.simonly.SimOnlyServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-12-03T15:02:57" hostname="mbpvangebruiker.kpnnl.local" time="0.056">
+  <properties/>
+  <testcase name="testFindSimOnlySubscriptionsByFilter" classname="com.kpn.ecommerce.singleshop.productservice.simonly.SimOnlyServiceTest" time="0.056"/>
+  <system-out><![CDATA[.16:02:57.827 [Test worker] ERROR c.k.e.s.p.simonly.SimOnlyMapper - Unable to double data on the bundle, [Onbeperkt] is not a numeric value. 
+.16:02:57.828 [Test worker] ERROR c.k.e.s.p.simonly.SimOnlyMapper - Unable to double data on the bundle, [Onbeperkt] is not a numeric value. 
+.16:02:57.830 [Test worker] ERROR c.k.e.s.p.simonly.SimOnlyMapper - Unable to double data on the bundle, [Onbeperkt] is not a numeric value. 
+.16:02:57.830 [Test worker] ERROR c.k.e.s.p.simonly.SimOnlyMapper - Unable to double data on the bundle, [Onbeperkt] is not a numeric value. 
+.16:02:57.830 [Test worker] DEBUG c.k.e.s.p.simonly.SimOnlyServiceImpl - findSimOnlySubscriptionsByFilter using completeness DEFAULT 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

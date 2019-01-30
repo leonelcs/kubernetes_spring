@@ -1,0 +1,72 @@
+apply plugin: 'org.springframework.boot'
+apply plugin: 'docker'
+
+task buildDocker(type: Docker) {
+    push = false
+    tagVersion = 'latest'
+
+    exposePort(8080)
+    
+    volume('/tmp')
+    addFile {
+        from jar
+        rename {'app.jar'}
+    }
+    setEntryPoint(["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app.jar"])
+    runCommand('addgroup --gid 1000 --system app && adduser --uid 1000 --system app --ingroup app')
+    addInstruction('USER', '1000')
+}
+buildDocker.dependsOn(build)
+
+docker {
+    baseImage "openjdk:8-jdk-alpine"
+    maintainer 'SingleShop team "ruud.kenter@kpn.com"'
+}
+
+dependencies {
+    implementation project(':product-model')
+
+    implementation(
+            'org.springframework.boot:spring-boot-starter-actuator',
+            'org.springframework.boot:spring-boot-starter',
+            'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-cache',
+            'org.springframework.boot:spring-boot-starter-data-neo4j',
+            'org.neo4j:neo4j-ogm-bolt-driver',
+            'com.google.guava:guava:27.0-jre',
+            'com.google.code.gson:gson:2.8.5',
+            'org.apache.commons:commons-lang3:3.8.1',
+            'io.springfox:springfox-swagger2:2.9.2',
+            'io.springfox:springfox-swagger-ui:2.9.2',
+            'com.github.ben-manes.caffeine:caffeine:2.6.2',
+            'org.springframework.cloud:spring-cloud-starter-openfeign',
+            'org.springframework.cloud:spring-cloud-starter-kubernetes:0.3.0.RELEASE'
+    )
+
+    //Lombok
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+
+    // testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+}
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Greenwich.BUILD-SNAPSHOT'
+    }
+}
+
+// Ensure that the developer-specific neo4j system properties aka environment variables you set
+// in your ~/.gradle/gradle.properties file, will also be available when running the api.
+// Put in the following to be able to run the api locally with 'gradle bootRun' :
+//
+// systemProp.product-db-user=neo4j
+// systemProp.product-db-password=[your password]
+// systemProp.product-db-host=localhost
+// systemProp.product-service-port=[your port]
+//
+bootRun {
+    [ "product-service-port", "product-db-user", "product-db-password", "product-db-host" ].each {
+        systemProperty it, System.getProperty(it)
+    }
+}

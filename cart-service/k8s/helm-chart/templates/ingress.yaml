@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Values.moduleName }}
+  namespace: {{ .Values.namespace }}
+spec:
+  rules:
+  - host: singleshop{{ .Values.ingressSuffix }}.main.tcloud.kpn.org
+    http:
+      paths:
+      - backend:
+          serviceName: {{ .Values.moduleName }}
+          servicePort: 8080
+        path: /cart
+  tls:
+  - hosts:
+    - singleshop{{ .Values.ingressSuffix }}.main.tcloud.kpn.org
+    secretName: tcloud

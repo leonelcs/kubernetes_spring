@@ -1,0 +1,15 @@
+dependencies {
+    implementation(
+            'org.springframework.boot:spring-boot-starter',
+            'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-data-neo4j',
+            'org.neo4j:neo4j-ogm-bolt-driver',
+            'io.springfox:springfox-swagger2:2.9.2',
+            'io.springfox:springfox-swagger-ui:2.9.2',)
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+dependencyManagement {
+    imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+  <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+  <!--  PROPERTIES -->
+  <property name="LOGS_DIR" value="logs"/>
+  <property name="ARCHIVES_DIR" value="archives"/>
+
+  <property name="CATALOGUE_DATA_IMPORTER_LOG" value="catalogue_data_importer"/>
+  <property name="ERROR_LOG" value="error"/>
+
+  <property name="DEFAULT_PATTERN" value="%d{yyyy-MM-dd/HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n"/>
+
+  <!-- keep 30 days worth of history -->
+  <property name="DEFAULT_MAX_HISTORY" value="30"/>
+
+  <!--  cap size at 4GB total size -->
+  <property name="DEFAULT_TOTAL_CAP_SIZE" value="4GB"/>
+
+  <!--  APPENDERS -->
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${DEFAULT_PATTERN}</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="CATALOGUE_DATA_IMPORTER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${LOGS_DIR}/${CATALOGUE_DATA_IMPORTER_LOG}.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${LOGS_DIR}/${ARCHIVES_DIR}/${CATALOGUE_DATA_IMPORTER_LOG}/%d{yyyy/MM,aux}/${CATALOGUE_DATA_IMPORTER_LOG}.%d{yyyy-MM-dd}.zip
+      </fileNamePattern>
+      <maxHistory>${DEFAULT_MAX_HISTORY}</maxHistory>
+      <totalSizeCap>${DEFAULT_TOTAL_CAP_SIZE}</totalSizeCap>
+    </rollingPolicy>
+    <encoder>
+      <pattern>${DEFAULT_PATTERN}</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${LOGS_DIR}/${ERROR_LOG}.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!--daily rollover: log folders by year and month but roll-over log files every day at midnight. -->
+      <fileNamePattern>${LOGS_DIR}/${ARCHIVES_DIR}/${ERROR_LOG}/%d{yyyy/MM,aux}/${ERROR_LOG}.%d{yyyy-MM-dd}.zip
+      </fileNamePattern>
+      <maxHistory>${DEFAULT_MAX_HISTORY}</maxHistory>
+      <totalSizeCap>${DEFAULT_TOTAL_CAP_SIZE}</totalSizeCap>
+    </rollingPolicy>
+    <encoder>
+      <pattern>${DEFAULT_PATTERN}</pattern>
+    </encoder>
+  </appender>
+
+
+  <!-- LOGGERS -->
+
+  <logger name="com.kpn" level="DEBUG" additivity="false">
+    <appender-ref ref="CATALOGUE_DATA_IMPORTER"/>
+  </logger>
+
+  <logger name="org.springframework" level="INFO" additivity="false">
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+  
+  <root level="ERROR">
+    <appender-ref ref="CONSOLE"/>
+    <appender-ref ref="ERROR"/>
+  </root>
+</configuration>

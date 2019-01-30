@@ -1,0 +1,1445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2018-12-03T15:02:55" hostname="mbpvangebruiker.kpnnl.local" time="2.124">
+  <properties/>
+  <testcase name="testPostNoneProductCompleteBenefits" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="1.425"/>
+  <testcase name="testPostCompletenessWithInternetAndTVSelected" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.054"/>
+  <testcase name="testPostMobilePhoneProductBenefits" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.049"/>
+  <testcase name="testPostInternetAndTVAndFixedPhoneProductCompleteBenefits" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.046"/>
+  <testcase name="testPostCompletenessWithoutParameters" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.035"/>
+  <testcase name="testPostInternetAndTVProductBenefits" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.04"/>
+  <testcase name="testPostCompletenessWithMobilePhoneSelected" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.035"/>
+  <testcase name="testPostInternetProductBenefits" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.037"/>
+  <testcase name="testGetAvailableProducts" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.033"/>
+  <testcase name="testPostInternetAndTVAndFixedPhoneProductBenefits" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.038"/>
+  <testcase name="testPostNoneProductBenefits" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.026"/>
+  <testcase name="testPostInternetProductCompleteBenefits" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.033"/>
+  <testcase name="testPostWithoutParametersBenefits" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.03"/>
+  <testcase name="testGetCompleteness" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.038"/>
+  <testcase name="testPostCompletenessWithNoneParameter" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.034"/>
+  <testcase name="testPostCompletenessWithInternetSelected" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.034"/>
+  <testcase name="testPostMobilePhoneProductCompleteBenefits" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.037"/>
+  <testcase name="testPostCompletenessWithInternetAndTVAndFixedPhoneSelected" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.027"/>
+  <testcase name="testPostInternetAndTVProductCompleteBenefits" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.031"/>
+  <testcase name="testPostWithoutParametersCompleteBenefits" classname="com.kpn.ecommerce.singleshop.productservice.business.CompletenessProcessorBenefitControllerTest" time="0.027"/>
+  <system-out><![CDATA[16:02:55,406 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+16:02:55,406 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+16:02:55,406 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/Users/gebruiker/KPN/SingleShop/single-shop/product-service/build/resources/main/logback.xml]
+16:02:55,556 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Will scan for changes in [file:/Users/gebruiker/KPN/SingleShop/single-shop/product-service/build/resources/main/logback.xml] 
+16:02:55,556 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Setting ReconfigureOnChangeTask scanning period to 1 minutes
+16:02:55,558 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+16:02:55,562 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+16:02:55,568 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+16:02:55,595 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - ROOT level set to DEBUG
+16:02:55,595 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+16:02:55,596 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+16:02:55,597 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@47ff5c8 - Registering current configuration as safe fallback point
+.16:02:55.946 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:56.236 [Test worker] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Log4j2LoggerProvider 
+.16:02:56.238 [Test worker] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.0.13.Final 
+.16:02:56.248 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:56.261 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:56.262 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:56.262 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:56.266 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:56.268 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:56.269 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:56.269 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:56.393 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:56.394 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:56.394 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:56.394 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:56.394 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:56.427 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:56.462 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:56.494 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:56.494 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:56.498 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:56.499 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:56.499 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6deb810d 
+.16:02:56.499 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@2fafeab6 
+.16:02:56.499 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:56.500 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 5 ms 
+.16:02:56.558 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/complete-benefits", parameters={masked} 
+.16:02:56.569 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeBenefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:56.610 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for completeBenefits, [[NONE]]. 
+.16:02:56.616 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [NONE] results in the following benefits: [] 
+.16:02:56.632 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:56.694 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits@711c42cc] 
+.16:02:56.723 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /complete-benefits
+       Parameters = {products=[NONE]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeBenefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = {"completeness":"standaard","benefits":[]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:56.786 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['completeness'] 
+.16:02:56.792 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['benefits'] 
+.16:02:56.803 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:56.810 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:56.811 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:56.811 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:56.811 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:56.812 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:56.812 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:56.813 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:56.813 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:56.822 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:56.822 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:56.822 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:56.822 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:56.823 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:56.825 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:56.828 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:56.831 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:56.831 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:56.831 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:56.831 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:56.831 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1e110acc 
+.16:02:56.832 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@742cfb91 
+.16:02:56.832 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:56.832 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms 
+.16:02:56.833 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/completeness", parameters={masked} 
+.16:02:56.833 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeness(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:56.835 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for completeness, [[INTERNET, INTERACTIVE_TV]]. 
+.16:02:56.836 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [INTERNET,INTERACTIVE_TV] results in the following benefits: [€5 discount on the mobile subscription.
+double data, text, minutes on the mobile subscription.
+free TV package (FOX Sports Eredivisie or Pluspakket).] 
+.16:02:56.837 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:56.838 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [VAMOTV] 
+.16:02:56.839 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /completeness
+       Parameters = {products=[INTERNET, INTERACTIVE_TV]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeness(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = "vamotv"
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:56.857 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:56.864 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:56.864 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:56.864 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:56.864 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:56.865 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:56.865 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:56.865 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:56.866 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:56.872 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:56.873 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:56.873 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:56.873 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:56.873 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:56.875 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:56.878 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:56.879 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:56.879 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:56.879 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:56.879 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:56.880 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7db9c057 
+.16:02:56.880 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@77772535 
+.16:02:56.880 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:56.880 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms 
+.16:02:56.881 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/benefits", parameters={masked} 
+.16:02:56.882 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Benefit>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.benefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:56.883 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for benefits, [[MOBILE_PHONE]]. 
+.16:02:56.883 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [MOBILE_PHONE] results in the following benefits: [€5 discount on the mobile subscription.
+€5 discount on the mobile subscription.
+free calling between both numbers.
+MB sharing between both numbers.] 
+.16:02:56.884 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:56.885 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[MOBILE_DISCOUNT, MOBILE_DISCOUNT, FREE_CALLING, DATA_BUNDLE_SHARING]] 
+.16:02:56.889 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /benefits
+       Parameters = {products=[MOBILE_PHONE]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Benefit>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.benefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = ["MOBILE_DISCOUNT","MOBILE_DISCOUNT","FREE_CALLING","DATA_BUNDLE_SHARING"]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:56.897 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $ 
+.16:02:56.909 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:56.916 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:56.916 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:56.916 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:56.916 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:56.917 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:56.917 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:56.917 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:56.918 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:56.924 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:56.924 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:56.924 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:56.924 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:56.925 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:56.926 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:56.929 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:56.930 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:56.930 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:56.930 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:56.930 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:56.930 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@20033108 
+.16:02:56.931 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@9098a08 
+.16:02:56.931 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:56.931 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms 
+.16:02:56.931 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/complete-benefits", parameters={masked} 
+.16:02:56.932 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeBenefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:56.933 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for completeBenefits, [[INTERNET, INTERACTIVE_TV, FIXED_PHONE]]. 
+.16:02:56.934 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [INTERNET,INTERACTIVE_TV,FIXED_PHONE] results in the following benefits: [€5 discount on the mobile subscription.
+double data, text, minutes on the mobile subscription.
+free TV package (FOX Sports Eredivisie or Pluspakket).
+free calling between both numbers.] 
+.16:02:56.935 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:56.936 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits@22b67ccc] 
+.16:02:56.940 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /complete-benefits
+       Parameters = {products=[INTERNET, INTERACTIVE_TV, FIXED_PHONE]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeBenefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = {"completeness":"vamotvlandline","benefits":["MOBILE_DISCOUNT","BUNDLE_MULTIPLIER","FREE_TV_PACKAGE","FREE_CALLING"]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:56.945 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['completeness'] 
+.16:02:56.945 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['benefits'] 
+.16:02:56.954 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:56.959 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:56.959 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:56.960 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:56.960 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:56.960 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:56.960 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:56.961 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:56.961 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:56.968 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:56.968 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:56.968 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:56.968 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:56.968 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:56.970 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:56.972 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:56.973 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:56.973 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:56.973 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:56.973 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:56.973 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2a6082f 
+.16:02:56.973 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@6cf3824d 
+.16:02:56.974 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:56.974 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms 
+.16:02:56.974 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/completeness", parameters={} 
+.16:02:56.975 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeness(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:56.976 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for completeness, [null]. 
+.16:02:56.976 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [] results in the following benefits: [] 
+.16:02:56.976 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:56.977 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [DEFAULT] 
+.16:02:56.977 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /completeness
+       Parameters = {}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeness(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = "standaard"
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:56.990 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:56.996 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:56.996 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:56.996 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:56.996 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:56.997 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:56.997 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:56.997 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:56.997 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.003 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.004 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.004 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.004 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.004 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.006 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.008 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.009 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.009 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.009 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.009 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.009 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5699a806 
+.16:02:57.010 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@52520f2b 
+.16:02:57.010 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.010 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms 
+.16:02:57.010 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/benefits", parameters={masked} 
+.16:02:57.011 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Benefit>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.benefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:57.013 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for benefits, [[INTERNET, INTERACTIVE_TV]]. 
+.16:02:57.013 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [INTERNET,INTERACTIVE_TV] results in the following benefits: [€5 discount on the mobile subscription.
+double data, text, minutes on the mobile subscription.
+free TV package (FOX Sports Eredivisie or Pluspakket).] 
+.16:02:57.014 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.014 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[MOBILE_DISCOUNT, BUNDLE_MULTIPLIER, FREE_TV_PACKAGE]] 
+.16:02:57.017 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /benefits
+       Parameters = {products=[INTERNET, INTERACTIVE_TV]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Benefit>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.benefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = ["MOBILE_DISCOUNT","BUNDLE_MULTIPLIER","FREE_TV_PACKAGE"]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.022 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $ 
+.16:02:57.027 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:57.034 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:57.034 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:57.035 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:57.035 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:57.035 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:57.035 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:57.036 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:57.036 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.042 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.042 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.042 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.042 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.043 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.044 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.047 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.048 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.048 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.048 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.048 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.048 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@41106b5e 
+.16:02:57.048 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@2c9b1612 
+.16:02:57.049 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.049 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms 
+.16:02:57.049 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/completeness", parameters={masked} 
+.16:02:57.050 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeness(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:57.052 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for completeness, [[MOBILE_PHONE]]. 
+.16:02:57.052 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [MOBILE_PHONE] results in the following benefits: [€5 discount on the mobile subscription.
+€5 discount on the mobile subscription.
+free calling between both numbers.
+MB sharing between both numbers.] 
+.16:02:57.053 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.054 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [MOMO] 
+.16:02:57.055 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /completeness
+       Parameters = {products=[MOBILE_PHONE]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeness(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = "momo"
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.067 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:57.072 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:57.072 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:57.072 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:57.072 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:57.073 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:57.073 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:57.074 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:57.074 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.080 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.080 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.081 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.081 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.081 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.082 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.085 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.086 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.086 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.086 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.086 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.086 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4847b54f 
+.16:02:57.086 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@49fe17cd 
+.16:02:57.086 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.087 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms 
+.16:02:57.087 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/benefits", parameters={masked} 
+.16:02:57.088 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Benefit>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.benefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:57.089 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for benefits, [[INTERNET]]. 
+.16:02:57.090 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [INTERNET] results in the following benefits: [€5 discount on the mobile subscription.
+double data, text, minutes on the mobile subscription.] 
+.16:02:57.090 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.091 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[MOBILE_DISCOUNT, BUNDLE_MULTIPLIER]] 
+.16:02:57.092 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /benefits
+       Parameters = {products=[INTERNET]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Benefit>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.benefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = ["MOBILE_DISCOUNT","BUNDLE_MULTIPLIER"]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.096 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $ 
+.16:02:57.101 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:57.105 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:57.105 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:57.105 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:57.105 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:57.106 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:57.106 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:57.106 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:57.106 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.113 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.113 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.113 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.113 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.113 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.115 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.117 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.118 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.118 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.118 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.118 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.118 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@47f6de48 
+.16:02:57.118 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@c90789 
+.16:02:57.118 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.118 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms 
+.16:02:57.119 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - GET "/available_products", parameters={} 
+.16:02:57.120 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.availableProducts() 
+.16:02:57.120 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for available products. 
+.16:02:57.121 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.122 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[NONE, INTERNET, INTERACTIVE_TV, FIXED_PHONE, MOBILE_PHONE]] 
+.16:02:57.123 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /available_products
+       Parameters = {}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.availableProducts()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = ["NONE","INTERNET","INTERACTIVE_TV","FIXED_PHONE","MOBILE_PHONE"]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.128 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $ 
+.16:02:57.134 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:57.139 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:57.139 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:57.139 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:57.139 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:57.140 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:57.140 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:57.140 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:57.141 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.151 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.151 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.151 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.151 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.152 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.154 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.157 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.157 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.157 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.158 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.158 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.158 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3e951f89 
+.16:02:57.158 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@1946674c 
+.16:02:57.158 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.158 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms 
+.16:02:57.159 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/benefits", parameters={masked} 
+.16:02:57.159 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Benefit>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.benefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:57.160 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for benefits, [[INTERNET, INTERACTIVE_TV, FIXED_PHONE]]. 
+.16:02:57.161 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [INTERNET,INTERACTIVE_TV,FIXED_PHONE] results in the following benefits: [€5 discount on the mobile subscription.
+double data, text, minutes on the mobile subscription.
+free TV package (FOX Sports Eredivisie or Pluspakket).
+free calling between both numbers.] 
+.16:02:57.161 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.162 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[MOBILE_DISCOUNT, BUNDLE_MULTIPLIER, FREE_TV_PACKAGE, FREE_CALLING]] 
+.16:02:57.164 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /benefits
+       Parameters = {products=[INTERNET, INTERACTIVE_TV, FIXED_PHONE]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Benefit>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.benefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = ["MOBILE_DISCOUNT","BUNDLE_MULTIPLIER","FREE_TV_PACKAGE","FREE_CALLING"]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.167 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $ 
+.16:02:57.172 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:57.176 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:57.176 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:57.176 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:57.176 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:57.177 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:57.177 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:57.177 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:57.177 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.183 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.183 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.183 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.183 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.183 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.185 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.187 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.187 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.187 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.187 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.187 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.188 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@44f90025 
+.16:02:57.188 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@3b62bc16 
+.16:02:57.188 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.188 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms 
+.16:02:57.188 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/benefits", parameters={masked} 
+.16:02:57.189 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Benefit>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.benefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:57.190 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for benefits, [[NONE]]. 
+.16:02:57.190 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [NONE] results in the following benefits: [] 
+.16:02:57.191 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.191 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]] 
+.16:02:57.191 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /benefits
+       Parameters = {products=[NONE]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Benefit>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.benefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = []
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.194 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $ 
+.16:02:57.200 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:57.204 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:57.204 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:57.204 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:57.205 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:57.205 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:57.205 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:57.205 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:57.206 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.212 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.212 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.212 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.213 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.213 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.214 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.216 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.217 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.217 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.217 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.217 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.217 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6ba2a7a8 
+.16:02:57.217 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@77ead574 
+.16:02:57.217 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.218 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms 
+.16:02:57.218 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/complete-benefits", parameters={masked} 
+.16:02:57.219 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeBenefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:57.220 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for completeBenefits, [[INTERNET]]. 
+.16:02:57.220 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [INTERNET] results in the following benefits: [€5 discount on the mobile subscription.
+double data, text, minutes on the mobile subscription.] 
+.16:02:57.220 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.221 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits@397a4c20] 
+.16:02:57.225 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /complete-benefits
+       Parameters = {products=[INTERNET]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeBenefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = {"completeness":"vamo","benefits":["MOBILE_DISCOUNT","BUNDLE_MULTIPLIER"]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.228 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['completeness'] 
+.16:02:57.228 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['benefits'] 
+.16:02:57.233 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:57.238 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:57.238 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:57.238 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:57.238 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:57.239 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:57.239 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:57.239 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:57.240 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.246 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.246 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.246 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.246 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.246 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.248 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.251 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.251 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.251 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.252 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.252 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.252 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@132cd9b1 
+.16:02:57.252 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@99c4905 
+.16:02:57.252 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.252 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms 
+.16:02:57.253 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/benefits", parameters={} 
+.16:02:57.254 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Benefit>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.benefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:57.254 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for benefits, [null]. 
+.16:02:57.255 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [] results in the following benefits: [] 
+.16:02:57.255 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.255 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]] 
+.16:02:57.256 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /benefits
+       Parameters = {}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Benefit>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.benefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = []
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.259 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $ 
+.16:02:57.267 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:57.276 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:57.276 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:57.276 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:57.276 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:57.277 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:57.277 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:57.277 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:57.278 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.284 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.284 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.284 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.284 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.284 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.286 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.288 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.288 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.289 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.289 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.289 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.289 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@f51d49c 
+.16:02:57.289 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@20279246 
+.16:02:57.289 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.289 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms 
+.16:02:57.290 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - GET "/completeness", parameters={} 
+.16:02:57.291 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeness() 
+.16:02:57.291 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved get request for completeness. 
+.16:02:57.292 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.292 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[VAMOTVLANDLINE, VAMOTV, VAMO, MOMO, DEFAULT]] 
+.16:02:57.295 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /completeness
+       Parameters = {}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness>> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeness()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = ["vamotvlandline","vamotv","vamo","momo","standaard"]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.298 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $ 
+.16:02:57.303 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:57.310 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:57.310 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:57.311 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:57.311 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:57.311 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:57.311 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:57.312 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:57.312 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.319 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.319 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.319 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.319 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.319 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.321 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.323 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.324 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.324 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.324 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.324 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.324 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6dc25fc4 
+.16:02:57.325 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@5ccf6c1a 
+.16:02:57.325 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.325 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms 
+.16:02:57.325 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/completeness", parameters={masked} 
+.16:02:57.326 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeness(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:57.327 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for completeness, [[NONE]]. 
+.16:02:57.327 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [NONE] results in the following benefits: [] 
+.16:02:57.328 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.329 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [DEFAULT] 
+.16:02:57.329 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /completeness
+       Parameters = {products=[NONE]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeness(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = "standaard"
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.338 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:57.344 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:57.345 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:57.345 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:57.345 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:57.345 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:57.345 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:57.346 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:57.346 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.354 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.355 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.355 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.355 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.355 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.357 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.359 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.359 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.359 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.360 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.360 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.360 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3ea45da 
+.16:02:57.360 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@16f8d79a 
+.16:02:57.360 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.360 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms 
+.16:02:57.361 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/completeness", parameters={masked} 
+.16:02:57.361 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeness(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:57.362 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for completeness, [[INTERNET]]. 
+.16:02:57.362 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [INTERNET] results in the following benefits: [€5 discount on the mobile subscription.
+double data, text, minutes on the mobile subscription.] 
+.16:02:57.363 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.364 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [VAMO] 
+.16:02:57.364 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /completeness
+       Parameters = {products=[INTERNET]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeness(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = "vamo"
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.372 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:57.377 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:57.378 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:57.378 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:57.378 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:57.378 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:57.378 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:57.379 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:57.379 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.385 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.386 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.386 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.386 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.386 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.388 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.392 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.392 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.392 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.393 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.393 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.393 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@537396c6 
+.16:02:57.393 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@164ebb03 
+.16:02:57.393 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.393 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms 
+.16:02:57.394 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/complete-benefits", parameters={masked} 
+.16:02:57.395 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeBenefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:57.397 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for completeBenefits, [[MOBILE_PHONE]]. 
+.16:02:57.397 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [MOBILE_PHONE] results in the following benefits: [€5 discount on the mobile subscription.
+€5 discount on the mobile subscription.
+free calling between both numbers.
+MB sharing between both numbers.] 
+.16:02:57.398 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.399 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits@6e7d091e] 
+.16:02:57.402 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /complete-benefits
+       Parameters = {products=[MOBILE_PHONE]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeBenefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = {"completeness":"momo","benefits":["MOBILE_DISCOUNT","MOBILE_DISCOUNT","FREE_CALLING","DATA_BUNDLE_SHARING"]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.405 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['completeness'] 
+.16:02:57.405 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['benefits'] 
+.16:02:57.410 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:57.414 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:57.414 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:57.414 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:57.414 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:57.415 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:57.415 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:57.415 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:57.415 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.421 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.421 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.421 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.421 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.421 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.423 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.425 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.425 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.425 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.425 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.425 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.425 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@302bffa9 
+.16:02:57.425 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@6de2546 
+.16:02:57.425 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.426 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms 
+.16:02:57.426 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/completeness", parameters={masked} 
+.16:02:57.427 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeness(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:57.429 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for completeness, [[INTERNET, INTERACTIVE_TV, FIXED_PHONE]]. 
+.16:02:57.429 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [INTERNET,INTERACTIVE_TV,FIXED_PHONE] results in the following benefits: [€5 discount on the mobile subscription.
+double data, text, minutes on the mobile subscription.
+free TV package (FOX Sports Eredivisie or Pluspakket).
+free calling between both numbers.] 
+.16:02:57.430 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.430 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [VAMOTVLANDLINE] 
+.16:02:57.431 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /completeness
+       Parameters = {products=[INTERNET, INTERACTIVE_TV, FIXED_PHONE]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeness(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = "vamotvlandline"
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.437 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:57.442 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:57.442 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:57.442 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:57.442 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:57.443 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:57.443 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:57.443 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:57.443 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.449 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.449 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.450 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.450 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.450 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.451 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.454 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.455 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.455 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.455 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.455 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.455 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@23b729f7 
+.16:02:57.455 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@7de7cb57 
+.16:02:57.455 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.455 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms 
+.16:02:57.456 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/complete-benefits", parameters={masked} 
+.16:02:57.456 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeBenefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:57.457 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for completeBenefits, [[INTERNET, INTERACTIVE_TV]]. 
+.16:02:57.458 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [INTERNET,INTERACTIVE_TV] results in the following benefits: [€5 discount on the mobile subscription.
+double data, text, minutes on the mobile subscription.
+free TV package (FOX Sports Eredivisie or Pluspakket).] 
+.16:02:57.458 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.459 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits@4fa693c] 
+.16:02:57.461 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /complete-benefits
+       Parameters = {products=[INTERNET, INTERACTIVE_TV]}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeBenefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = {"completeness":"vamotv","benefits":["MOBILE_DISCOUNT","BUNDLE_MULTIPLIER","FREE_TV_PACKAGE"]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.464 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['completeness'] 
+.16:02:57.464 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['benefits'] 
+.16:02:57.468 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in <unknown> 
+.16:02:57.473 [Test worker] DEBUG o.h.v.i.e.r.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable. 
+.16:02:57.473 [Test worker] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL 
+.16:02:57.473 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator 
+.16:02:57.473 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1 
+.16:02:57.474 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration. 
+.16:02:57.474 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL 
+.16:02:57.474 [Test worker] DEBUG o.h.v.i.x.c.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader 
+.16:02:57.474 [Test worker] DEBUG o.h.v.i.x.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only. 
+.16:02:57.479 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator. 
+.16:02:57.480 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver. 
+.16:02:57.480 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider. 
+.16:02:57.480 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider. 
+.16:02:57.480 [Test worker] DEBUG o.h.v.i.engine.ValidatorFactoryImpl - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory. 
+.16:02:57.481 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1, ResponseBodyAdvice 
+.16:02:57.483 [Test worker] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice 
+.16:02:57.483 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet '' 
+.16:02:57.484 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet '' 
+.16:02:57.484 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver 
+.16:02:57.484 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected FixedThemeResolver 
+.16:02:57.484 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@52e5f9c8 
+.16:02:57.484 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@3f5f89f4 
+.16:02:57.484 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+.16:02:57.484 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms 
+.16:02:57.485 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - POST "/complete-benefits", parameters={} 
+.16:02:57.485 [Test worker] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeBenefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>) 
+.16:02:57.486 [Test worker] DEBUG c.k.e.s.p.b.CompletenessBenefitController - retrieved request for completeBenefits, [null]. 
+.16:02:57.486 [Test worker] DEBUG c.k.e.s.p.b.CompletenessProcessor - selected product(s): [] results in the following benefits: [] 
+.16:02:57.486 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/problem+json;charset=UTF-8', given [*/*] and supported [application/problem+json;charset=UTF-8] 
+.16:02:57.487 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits@6b5a2468] 
+.16:02:57.489 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Completed 200 OK 
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /complete-benefits
+       Parameters = {}
+          Headers = {Content-Type=[application/json]}
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController
+           Method = org.springframework.http.ResponseEntity<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$CompletenessBenefits> com.kpn.ecommerce.singleshop.productservice.business.CompletenessBenefitController.completeBenefits(java.util.List<com.kpn.ecommerce.singleshop.productservice.dto.Completeness$Product>)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/problem+json;charset=UTF-8]}
+     Content type = application/problem+json;charset=UTF-8
+             Body = {"completeness":"standaard","benefits":[]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+.16:02:57.491 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['completeness'] 
+.16:02:57.491 [Test worker] DEBUG c.j.j.internal.path.CompiledPath - Evaluating path: $['benefits'] 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,7 @@
+apiVersion: 1.0
+name: cart-db
+version: 0.0.1
+description: The Shopping Cart database.
+maintainers:
+  - name: SingleShop Team
+    email: single-shop-api@kpn.com

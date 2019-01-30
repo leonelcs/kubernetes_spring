@@ -1,0 +1,75 @@
+apply plugin: 'org.springframework.boot'
+apply plugin: 'docker'
+
+task buildDocker(type: Docker) {
+    push = false
+    applicationName = jar.baseName
+    tagVersion = 'latest';
+    tag = 'artifacts.kpn.org/singleshop/single-shop-api'
+    registry = 'https://artifacts.kpn.org/singleshop/single-shop-api'
+    exposePort(8080)
+    volume('/tmp')
+    jar.outputs.files.getFiles().each {
+        addFile(it.absolutePath, 'app.jar')
+        // todo: what if multiple files ? there can only be one entrypoint?
+    }
+    setEntryPoint(["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app.jar"])
+    runCommand('addgroup --gid 1000 --system app && adduser --uid 1000 --system app --ingroup app')
+    addInstruction('USER', '1000')
+}
+
+docker {
+    baseImage "openjdk:8-jdk-alpine"
+    maintainer 'SingleShop team "ruud.kenter@kpn.com"'
+}
+
+dependencies {
+    // Project dependencies
+    implementation project(':product-model')
+
+    implementation (
+        // Spring
+            'org.springframework.boot:spring-boot-starter-actuator',
+            'org.springframework.boot:spring-boot-starter',
+            'org.springframework.boot:spring-boot-starter-web',
+
+        // Swagger 2 and Swagger UI portal
+            'io.springfox:springfox-swagger2:2.9.2',
+            'io.springfox:springfox-swagger-ui:2.9.2',
+
+        // Neo4j
+            'org.springframework.boot:spring-boot-starter-cache',
+            'org.springframework.boot:spring-boot-starter-data-neo4j',
+            'org.neo4j:neo4j-ogm-bolt-driver',
+         //Spring Cloud Kubernetes stack
+            'org.springframework.cloud:spring-cloud-starter-kubernetes',
+            'org.springframework.cloud:spring-cloud-starter-openfeign'
+    )
+    //Lombok
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+
+    // testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Greenwich.BUILD-SNAPSHOT'
+    }
+}
+
+// Ensure that the developer-specific neo4j system properties aka environment variables you set
+// in your ~/.gradle/gradle.properties file, will also be available when running the api.
+// Put in the following to be able to run the api locally with 'gradle bootRun' :
+//
+// systemProp.cart-db-user=neo4j
+// systemProp.cart-db-password=[your password]
+// systemProp.cart-db-host=localhost
+// systemProp.product-service-host=localhost
+// systemProp.product-service-port=[your port]
+//
+bootRun {
+    [ "product-service-host", "product-service-port", "cart-db-host", "cart-db-user", "cart-db-password" ].each {
+        systemProperty it, System.getProperty(it)
+    }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kpn.ecommerce.singleshop.productservice.simonly.SimOnlyMapperTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-12-03T15:02:58" hostname="mbpvangebruiker.kpnnl.local" time="0.004">
+  <properties/>
+  <testcase name="toResponseHappyFlow" classname="com.kpn.ecommerce.singleshop.productservice.simonly.SimOnlyMapperTest" time="0.004"/>
+  <system-out><![CDATA[.16:02:58.201 [Test worker] ERROR c.k.e.s.p.simonly.SimOnlyMapper - Unable to double data on the bundle, [Onbeperkt] is not a numeric value. 
+.16:02:58.202 [Test worker] ERROR c.k.e.s.p.simonly.SimOnlyMapper - Unable to double data on the bundle, [Onbeperkt] is not a numeric value. 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
